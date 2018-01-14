@@ -7,7 +7,7 @@ class MyCsvItemExporter(CsvItemExporter):
         delimiter = settings.get('CSV_DELIMITER', ',')
         kwargs['delimiter'] = delimiter
 
-        fields_to_export = settings.get('FIELDS_TO_EXPORT_DOWNLOADS', [])
+        fields_to_export = settings.get('FIELDS_TO_EXPORT_GUIDE', [])
         if fields_to_export:
             kwargs['fields_to_export'] = fields_to_export
 

@@ -20,3 +20,12 @@ class DownloadsItem(scrapy.Item):
     time = scrapy.Field()
     href = scrapy.Field()
 
+
+class AnnouncementItem(scrapy.Item):
+    title = scrapy.Field()
+
+
+class GuideItem(scrapy.Item):
+    title = scrapy.Field()
+    time = scrapy.Field()
+    href = scrapy.Field()

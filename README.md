@@ -12,6 +12,12 @@
 2. DownloadsItem
    - name: downloads
    - fields_to_export: FIELDS_TO_EXPORT_DOWNLOADS
+3. AnnouncementItem
+   - name: announcement
+   - fields_to_export: FIELDS_TO_EXPORT_ANNOUNCEMENT
+4. GuideItem
+   - name: guide
+   - fields_to_export: FIELDS_TO_EXPORT_GUIDE
 
 ## Start
 

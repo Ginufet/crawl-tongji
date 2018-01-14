@@ -37,6 +37,18 @@ FIELDS_TO_EXPORT_DOWNLOADS = [
     'time'
 ]
 
+FIELDS_TO_EXPORT_ANNOUNCEMENT = [
+    'title',
+    'href',
+    'time'
+]
+
+FIELDS_TO_EXPORT_GUIDE = [
+    'title',
+    'href',
+    'time'
+]
+
 FEED_EXPORTERS = {
     'csv': 'tjcwc.spiders.my_csv_exporter.MyCsvItemExporter',
 }
