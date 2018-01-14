@@ -14,3 +14,9 @@ class FaqItem(scrapy.Item):
     answer = scrapy.Field()
     href = scrapy.Field()
 
+
+class DownloadsItem(scrapy.Item):
+    title = scrapy.Field()
+    time = scrapy.Field()
+    href = scrapy.Field()
+

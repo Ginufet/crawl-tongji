@@ -12,8 +12,8 @@ class FaqSpider(scrapy.Spider):
     base_url = "http://tjcwc.tongji.edu.cn/"
 
     def parse(self, response):
-        for href in response.xpath("//li[@class='depth_1']/a/@href"):
-            aspect_url = self.base_url + href.extract()
+        for aspect_url_sel in response.xpath("//li[@class='depth_1']/a/@href"):
+            aspect_url = self.base_url + aspect_url_sel.extract()
             print aspect_url
             yield scrapy.Request(aspect_url, callback=self.parse_aspect)
 

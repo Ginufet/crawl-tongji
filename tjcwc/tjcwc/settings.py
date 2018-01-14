@@ -24,12 +24,19 @@ ROBOTSTXT_OBEY = False
 # Output
 FEED_EXPORT_ENCODING = 'utf-8'
 CSV_DELIMITER = '\t'
-FIELDS_TO_EXPORT_FQA = [
+FIELDS_TO_EXPORT_FAQ = [
     'title',
     'answer',
     'time',
     'href'
 ]
+
+FIELDS_TO_EXPORT_DOWNLOADS = [
+    'title',
+    'href',
+    'time'
+]
+
 FEED_EXPORTERS = {
     'csv': 'tjcwc.spiders.my_csv_exporter.MyCsvItemExporter',
 }
