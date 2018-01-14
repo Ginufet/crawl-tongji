@@ -25,3 +25,11 @@ class DownloadsSpider(scrapy.Spider):
             downloads_item["href"] = href
             downloads_item["time"] = sel.xpath("./span/text()").extract()[0].replace("[", "").replace("]", "")
             yield downloads_item
+        page_sel = response.xpath("//div[@class='pager']")
+        if page_sel:
+            directions = page_sel.xpath("./a")
+            for direction in directions:
+                if direction.xpath("./text()").extract()[0] == u"下一页":
+                    next_page_url = self.base_url + direction.xpath("./@href").extract()[0]
+                    yield scrapy.Request(next_page_url, callback=self.parse_aspect)
+                    break
