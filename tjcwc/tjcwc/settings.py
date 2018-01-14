@@ -19,7 +19,20 @@ NEWSPIDER_MODULE = 'tjcwc.spiders'
 #USER_AGENT = 'tjcwc (+http://www.yourdomain.com)'
 
 # Obey robots.txt rules
-ROBOTSTXT_OBEY = True
+ROBOTSTXT_OBEY = False
+
+# Output
+FEED_EXPORT_ENCODING = 'utf-8'
+CSV_DELIMITER = '\t'
+FIELDS_TO_EXPORT_FQA = [
+    'title',
+    'answer',
+    'time',
+    'href'
+]
+FEED_EXPORTERS = {
+    'csv': 'tjcwc.spiders.my_csv_exporter.MyCsvItemExporter',
+}
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 #CONCURRENT_REQUESTS = 32

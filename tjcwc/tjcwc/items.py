@@ -8,7 +8,9 @@
 import scrapy
 
 
-class TjcwcItem(scrapy.Item):
-    # define the fields for your item here like:
-    # name = scrapy.Field()
-    pass
+class FaqItem(scrapy.Item):
+    title = scrapy.Field()
+    time = scrapy.Field()
+    answer = scrapy.Field()
+    href = scrapy.Field()
+
