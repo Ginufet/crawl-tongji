@@ -1,21 +1,18 @@
 # -*- coding: utf-8 -*-
 import scrapy
-import os
-from tjcwc.items import AnnouncementItem
+from tjcwc.items import TjcwcItem
+from tjcwc_spider import TjcwcSpider
 
 
-class AnnouncementSpider(scrapy.Spider):
-    name = 'announcement'
-    allowed_domains = ["tongji.edu.cn"]
-    base_url = "http://tjcwc.tongji.edu.cn/"
+class AnnouncementSpider(TjcwcSpider):
+    name = "announcement"
     start_urls = [
         "http://tjcwc.tongji.edu.cn/index.php?classid=9701"
     ]
-    newest = True
 
     def parse(self, response):
         for sel in response.xpath("//div[@class='news_list']/ul/li"):
-            announcement_item = AnnouncementItem()
+            announcement_item = TjcwcItem()
             title = sel.xpath("./a/text()").extract()[0]
             href = self.base_url + sel.xpath("./a/@href").extract()[0]
             time = sel.xpath("./span/text()").extract()[0].replace("[", "").replace("]", "")

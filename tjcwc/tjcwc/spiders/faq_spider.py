@@ -1,15 +1,14 @@
 # -*- coding: utf-8 -*-
 import scrapy
 from tjcwc.items import FaqItem
+from tjcwc_spider import TjcwcSpider
 
 
-class FaqSpider(scrapy.Spider):
+class FaqSpider(TjcwcSpider):
     name = "faq"
-    allowed_domains = ["tongji.edu.cn"]
     start_urls = [
         "http://tjcwc.tongji.edu.cn/index.php?classid=9778",
     ]
-    base_url = "http://tjcwc.tongji.edu.cn/"
 
     def parse(self, response):
         for aspect_url_sel in response.xpath("//li[@class='depth_1']/a/@href"):

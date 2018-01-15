@@ -8,24 +8,11 @@
 import scrapy
 
 
-class FaqItem(scrapy.Item):
+class TjcwcItem(scrapy.item):
     title = scrapy.Field()
     time = scrapy.Field()
+    href = scrapy.Field()
+
+
+class FaqItem(TjcwcItem):
     answer = scrapy.Field()
-    href = scrapy.Field()
-
-
-class DownloadsItem(scrapy.Item):
-    title = scrapy.Field()
-    time = scrapy.Field()
-    href = scrapy.Field()
-
-
-class AnnouncementItem(scrapy.Item):
-    title = scrapy.Field()
-
-
-class GuideItem(scrapy.Item):
-    title = scrapy.Field()
-    time = scrapy.Field()
-    href = scrapy.Field()

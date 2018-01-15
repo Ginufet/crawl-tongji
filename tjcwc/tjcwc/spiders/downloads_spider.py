@@ -1,12 +1,11 @@
 # -*- coding: utf-8 -*-
 import scrapy
-from tjcwc.items import DownloadsItem
+from tjcwc.items import TjcwcItem
+from tjcwc_spider import TjcwcSpider
 
 
-class DownloadsSpider(scrapy.Spider):
+class DownloadsSpider(TjcwcSpider):
     name = 'downloads'
-    allowed_domains = ["tongji.edu.cn"]
-    base_url = "http://tjcwc.tongji.edu.cn/"
     start_urls = [
         "http://tjcwc.tongji.edu.cn/index.php?classid=9735"
     ]
@@ -18,7 +17,7 @@ class DownloadsSpider(scrapy.Spider):
 
     def parse_aspect(self, response):
         for sel in response.xpath("//div[@class='download_file_list']/ul/li"):
-            downloads_item = DownloadsItem()
+            downloads_item = TjcwcItem()
             title = sel.xpath("./a/text()").extract()[0].replace("\n","").replace(" ", "")
             href = self.base_url + "index.php" + sel.xpath("./a/@href").extract()[0]
             downloads_item["title"] = title
