@@ -29,7 +29,16 @@ class FaqSpider(TjcwcSpider):
     def parse_answer(self, response):
         faq_item = response.meta["item"]
         answers = response.xpath("//table/tr/td[@class='news_content']/p/span/text()").extract()
-        answer = ''.join(answers).replace(u'答：', u'')
+        if not answers:
+            answers = response.xpath("//table/tr/td[@class='news_content']/p/text()").extract()
+        if not answers:
+            answers = response.xpath("//table/tr/td[@class='news_content']/span/text()").extract()
+        if not answers:
+            answers = response.xpath("//table/tr/td[@class='news_content']/div/text()").extract()
+        if not answers:
+            answers = response.xpath("//table/tr/td[@class='news_content']/text()").extract()
+
+        answer = ''.join(answers).replace(u'答：', u'').replace(' ', '').replace('\n', '').replace('\r', '')
         faq_item["answer"] = answer
         return faq_item
 

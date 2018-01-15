@@ -8,7 +8,7 @@
 import scrapy
 
 
-class TjcwcItem(scrapy.item):
+class TjcwcItem(scrapy.Item):
     title = scrapy.Field()
     time = scrapy.Field()
     href = scrapy.Field()
