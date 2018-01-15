@@ -26,6 +26,10 @@
    - project: tjbwc
    - name: downloads
    - fields_to_export: FIELDS_TO_EXPORT_TJBWC
+6. AnnouncementItem
+   - project: tjbwc
+   - name: announcement
+   - fields_to_export: FIELDS_TO_EXPORT_TJBWC
 
 ## Start
 
