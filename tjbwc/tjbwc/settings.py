@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Scrapy settings for tjcwc project
+# Scrapy settings for tjbwc project
 #
 # For simplicity, this file contains only settings considered important or
 # commonly used. You can find more settings consulting the documentation:
@@ -9,14 +9,14 @@
 #     http://scrapy.readthedocs.org/en/latest/topics/downloader-middleware.html
 #     http://scrapy.readthedocs.org/en/latest/topics/spider-middleware.html
 
-BOT_NAME = 'tjcwc'
+BOT_NAME = 'tjbwc'
 
-SPIDER_MODULES = ['tjcwc.spiders']
-NEWSPIDER_MODULE = 'tjcwc.spiders'
+SPIDER_MODULES = ['tjbwc.spiders']
+NEWSPIDER_MODULE = 'tjbwc.spiders'
 
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-#USER_AGENT = 'tjcwc (+http://www.yourdomain.com)'
+#USER_AGENT = 'tjbwc (+http://www.yourdomain.com)'
 
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = False
@@ -24,25 +24,18 @@ ROBOTSTXT_OBEY = False
 # Output
 FEED_EXPORT_ENCODING = 'utf-8'
 CSV_DELIMITER = '\t'
-FIELDS_TO_EXPORT_FAQ = [
-    'title',
-    'answer',
-    'time',
-    'href'
-]
-
-FIELDS_TO_EXPORT_TJCWC = [
+FIELDS_TO_EXPORT_TJBWC = [
     'title',
     'href',
     'time'
 ]
 
 FEED_EXPORTERS = {
-    'csv': 'tjcwc.spiders.my_csv_exporter.MyCsvItemExporter',
+    'csv': 'tjbwc.spiders.my_csv_exporter.MyCsvItemExporter',
 }
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
-CONCURRENT_REQUESTS = 32
+#CONCURRENT_REQUESTS = 32
 
 # Configure a delay for requests for the same website (default: 0)
 # See http://scrapy.readthedocs.org/en/latest/topics/settings.html#download-delay
@@ -53,7 +46,7 @@ CONCURRENT_REQUESTS = 32
 #CONCURRENT_REQUESTS_PER_IP = 16
 
 # Disable cookies (enabled by default)
-COOKIES_ENABLED = False
+#COOKIES_ENABLED = False
 
 # Disable Telnet Console (enabled by default)
 #TELNETCONSOLE_ENABLED = False
@@ -67,13 +60,13 @@ COOKIES_ENABLED = False
 # Enable or disable spider middlewares
 # See http://scrapy.readthedocs.org/en/latest/topics/spider-middleware.html
 #SPIDER_MIDDLEWARES = {
-#    'tjcwc.middlewares.TjcwcSpiderMiddleware': 543,
+#    'tjbwc.middlewares.TjbwcSpiderMiddleware': 543,
 #}
 
 # Enable or disable downloader middlewares
 # See http://scrapy.readthedocs.org/en/latest/topics/downloader-middleware.html
 #DOWNLOADER_MIDDLEWARES = {
-#    'tjcwc.middlewares.MyCustomDownloaderMiddleware': 543,
+#    'tjbwc.middlewares.MyCustomDownloaderMiddleware': 543,
 #}
 
 # Enable or disable extensions
@@ -85,7 +78,7 @@ COOKIES_ENABLED = False
 # Configure item pipelines
 # See http://scrapy.readthedocs.org/en/latest/topics/item-pipeline.html
 #ITEM_PIPELINES = {
-#    'tjcwc.pipelines.TjcwcPipeline': 300,
+#    'tjbwc.pipelines.TjbwcPipeline': 300,
 #}
 
 # Enable and configure the AutoThrottle extension (disabled by default)

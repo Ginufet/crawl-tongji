@@ -4,20 +4,28 @@
 
 # Get start
 
-## Item list
+### Item list
 
 1. FaqItem
+   - project: tjcwc
    - name: faq
    - fields_to_export: FIELDS_TO_EXPORT_FAQ
 2. DownloadsItem
+   - project: tjcwc
    - name: downloads
-   - fields_to_export: FIELDS_TO_EXPORT_DOWNLOADS
+   - fields_to_export: FIELDS_TO_EXPORT_TJCWC
 3. AnnouncementItem
+   - project: tjcwc
    - name: announcement
-   - fields_to_export: FIELDS_TO_EXPORT_ANNOUNCEMENT
+   - fields_to_export: FIELDS_TO_EXPORT_TJCWC
 4. GuideItem
+   - project: tjcwc
    - name: guide
-   - fields_to_export: FIELDS_TO_EXPORT_GUIDE
+   - fields_to_export: FIELDS_TO_EXPORT_TJCWC
+5. DownloadsItem
+   - project: tjbwc
+   - name: downloads
+   - fields_to_export: FIELDS_TO_EXPORT_TJBWC
 
 ## Start
 
